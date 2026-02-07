@@ -244,6 +244,12 @@ details[open] .player-info {
 .players-page .player-info strong {
   color: #1e3a8a;
 }
+/* ===== FORCE FIX PLAYERS PAGE ===== */
+.players-page main,
+.players-page .container,
+.players-page .players-grid {
+  background-color: transparent !important;
+}
 
 .players-page .player-info .full {
   grid-column: span 2;
