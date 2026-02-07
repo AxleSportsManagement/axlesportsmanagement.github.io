@@ -70,3 +70,52 @@ section h2 {
   font-size: 26px;
   margin-bottom: 15px;
 }
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+thead {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+tbody tr:hover {
+  background-color: #e0e7ff;
+}
+
+.main-nav {
+  margin: 20px 0;
+}
+
+.main-nav a {
+  margin-right: 15px;
+  font-weight: bold;
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.main-nav a.active {
+  text-decoration: underline;
+}
