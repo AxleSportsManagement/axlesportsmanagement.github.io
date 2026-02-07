@@ -250,7 +250,3 @@ details[open] .player-info {
 .players-page .players-grid {
   background-color: transparent !important;
 }
-
-.players-page .player-info .full {
-  grid-column: span 2;
-}
