@@ -1,25 +1,106 @@
+/* ============================= */
+/* RESET & BASE */
+/* ============================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  width: 90px;
+  margin-right: 20px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.site-header p {
+  margin: 6px 0 0;
+  color: #555;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+.main-nav {
+  background-color: #0056b3;
+  padding: 12px 20px;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.main-nav a.active {
+  text-decoration: underline;
+}
+
+/* ============================= */
 /* PLAYERS GRID */
+/* ============================= */
 .players-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
   margin-top: 30px;
 }
 
+/* ============================= */
 /* PLAYER CARD */
+/* ============================= */
 .player-card {
+  background-color: #ffffff;
+  border-radius: 10px;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #ffffff;
   overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.player-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* REMOVE DEFAULT ARROW */
 .player-card summary {
   list-style: none;
   cursor: pointer;
-  padding: 20px;
-  text-align: center;
+  padding: 18px;
 }
 
 .player-card summary::-webkit-details-marker {
@@ -29,33 +110,77 @@
 /* SUMMARY CONTENT */
 .player-card summary img {
   width: 100%;
-  max-width: 140px;
-  margin-bottom: 12px;
+  height: 180px;
+  object-fit: contain;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  margin-bottom: 14px;
 }
 
-.player-card h3 {
-  margin: 6px 0 2px;
-  font-size: 16px;
+.player-card summary h3 {
+  margin: 0;
+  font-size: 18px;
 }
 
-.player-card .team {
-  font-size: 13px;
-  color: #6b7280;
+.player-card summary .team {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #475569;
 }
 
-/* DETAIL INFO */
+/* ============================= */
+/* PLAYER DETAIL (OPEN STATE) */
+/* ============================= */
 .player-info {
-  padding: 16px 20px;
   border-top: 1px solid #e5e7eb;
-  background: #f9fafb;
-}
-
-.player-info p {
-  margin: 6px 0;
+  padding: 16px 18px;
+  background-color: #f9fafb;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
   font-size: 14px;
 }
 
-/* OPEN STATE */
-.player-card[open] {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+.player-info p {
+  margin: 0;
+}
+
+.player-info strong {
+  color: #1e3a8a;
+}
+
+/* FULL WIDTH ROW (POSITION) */
+.player-info .full {
+  grid-column: span 2;
+}
+
+/* ============================= */
+/* DETAILS ANIMATION */
+/* ============================= */
+details[open] .player-info {
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 600px) {
+  .player-info {
+    grid-template-columns: 1fr;
+  }
+
+  .player-info .full {
+    grid-column: span 1;
+  }
 }
