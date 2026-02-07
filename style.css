@@ -1,52 +1,72 @@
+/* RESET DASAR */
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 40px;
   background-color: #f8f9fa;
-  color: #222;
+  color: #1a1a1a;
 }
 
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
 .site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header-inner {
   display: flex;
   align-items: center;
-  gap: 20px;
+  padding: 20px 0;
 }
 
-.site-header img {
-  height: 80px;
-}
-
-.site-header h1 {
-  margin: 0;
-}
-
-.site-nav {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.site-nav a {
+.logo {
+  width: 90px;
+  height: auto;
   margin-right: 20px;
+}
+
+.brand-text h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.brand-text p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+/* NAVBAR */
+.main-nav {
+  background-color: #0056b3;
+}
+
+.main-nav a {
+  color: #ffffff;
   text-decoration: none;
-  color: #0056b3;
+  margin-right: 20px;
   font-weight: bold;
 }
 
-.site-nav a:hover {
+.main-nav .container {
+  padding: 12px 20px;
+}
+
+.main-nav a:hover {
   text-decoration: underline;
 }
 
+/* CONTENT */
 section {
-  max-width: 900px;
+  margin-top: 40px;
 }
-.player-card {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-.site-header img {
-  display: block;
-  width: 120px;
-  height: auto;
+
+section h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
 }
