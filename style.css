@@ -1,4 +1,11 @@
-/* RESET DASAR */
+/* ============================= */
+/* RESET & BASE */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,23 +13,22 @@ body {
   color: #1a1a1a;
 }
 
-/* CONTAINER */
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 0 20px;
 }
 
+/* ============================= */
 /* HEADER */
-.site-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-}
+/* ============================= */
 
-.header-inner {
+.site-header {
   display: flex;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .logo {
@@ -31,19 +37,23 @@ body {
   margin-right: 20px;
 }
 
-.brand-text h1 {
+.site-header h1 {
   margin: 0;
   font-size: 28px;
 }
 
-.brand-text p {
-  margin: 5px 0 0;
+.site-header p {
+  margin: 6px 0 0;
   color: #555;
 }
 
+/* ============================= */
 /* NAVBAR */
+/* ============================= */
+
 .main-nav {
   background-color: #0056b3;
+  padding: 12px 20px;
 }
 
 .main-nav a {
@@ -53,115 +63,113 @@ body {
   font-weight: bold;
 }
 
-.main-nav .container {
-  padding: 12px 20px;
-}
-
 .main-nav a:hover {
   text-decoration: underline;
-}
-
-/* CONTENT */
-section {
-  margin-top: 40px;
-}
-
-section h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
-}
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #ffffff;
-}
-
-thead {
-  background-color: #1e3a8a;
-  color: #ffffff;
-}
-
-th, td {
-  padding: 12px 14px;
-  border: 1px solid #ddd;
-  text-align: left;
-  font-size: 14px;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f8fafc;
-}
-
-tbody tr:hover {
-  background-color: #e0e7ff;
-}
-
-.main-nav {
-  margin: 20px 0;
-}
-
-.main-nav a {
-  margin-right: 15px;
-  font-weight: bold;
-  color: #1e40af;
-  text-decoration: none;
 }
 
 .main-nav a.active {
   text-decoration: underline;
 }
+
 /* ============================= */
-/* PLAYERS TABLE STYLE */
+/* PAGE TITLE */
 /* ============================= */
 
-.table-wrapper {
-  overflow-x: auto;
-  margin-top: 40px;
+h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
 }
 
-table {
+/* ============================= */
+/* PLAYERS GRID */
+/* ============================= */
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* ============================= */
+/* PLAYER CARD */
+/* ============================= */
+
+.player-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* REMOVE DEFAULT DETAILS ARROW */
+.player-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.player-card summary::-webkit-details-marker {
+  display: none;
+}
+
+/* IMAGE */
+.player-card img {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  background-color: #ffffff;
+  height: 180px;
+  object-fit: contain;
+  background: #f1f5f9;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+/* PLAYER NAME */
+.player-card h3 {
+  margin: 14px 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* TEAM */
+.player-card .team {
   font-size: 14px;
+  color: #475569;
 }
 
-thead th {
-  background-color: #1e3a8a;
-  color: #ffffff;
-  padding: 14px 18px;
-  text-align: left;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
+/* ============================= */
+/* PLAYER DETAILS (EXPAND) */
+/* ============================= */
+
+.player-info {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f8fafc;
 }
 
-tbody td {
-  padding: 14px 18px;
-  border-bottom: 1px solid #e5e7eb;
-  line-height: 1.6;
-  vertical-align: middle;
+.player-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #1e293b;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9fafb;
-}
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
-tbody tr:hover {
-  background-color: #eef2ff;
-}
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
 
-/* Lebarkan kolom penting */
-td:nth-child(1) { min-width: 220px; } /* Player Name */
-td:nth-child(2) { min-width: 260px; } /* Team */
-td:nth-child(7) { min-width: 240px; } /* Position */
+  .logo {
+    margin-bottom: 12px;
+  }
+}
